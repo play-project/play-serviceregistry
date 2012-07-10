@@ -21,6 +21,7 @@
     <module>play-serviceregistry-api</module>
     <module>play-servicregistry-service</module>
     <module>play-serviceregistry-war</module>
+    <module>play-serviceregistry-soapclient</module>
   </modules>
 
 	<repositories>
