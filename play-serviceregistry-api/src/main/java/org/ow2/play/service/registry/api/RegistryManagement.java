@@ -19,64 +19,25 @@
  */
 package org.ow2.play.service.registry.api;
 
-import java.util.List;
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 /**
+ * Registry management, should be secure!
+ * 
  * @author chamerling
  * 
  */
 @WebService
-public interface Registry {
+public interface RegistryManagement {
+
+	@WebMethod
+	void start() throws RegistryException;
+
+	@WebMethod
+	void stop() throws RegistryException;
 	
-	/**
-	 * Intialize the registry
-	 * 
-	 * @throws RegistryException
-	 */
 	@WebMethod
-	void init() throws RegistryException;
+	void setProperties() throws RegistryException;
 
-	/**
-	 * Get an URL from its key
-	 * 
-	 * @param key
-	 * @return
-	 */
-	@WebMethod
-	String get(String key) throws RegistryException;
-
-	/**
-	 * Put a key/value pair. Create entry of key does not already exists, update
-	 * if exists
-	 * 
-	 * @param key
-	 * @param value
-	 */
-	@WebMethod
-	void put(String key, String value) throws RegistryException;
-
-	/**
-	 * Get all the keys
-	 * 
-	 * @return
-	 */
-	@WebMethod
-	List<String> keys() throws RegistryException;
-
-	/**
-	 * Clear all the entries
-	 */
-	@WebMethod
-	void clear() throws RegistryException;
-
-	/**
-	 * Load from a properties file...
-	 * 
-	 * @param url
-	 */
-	@WebMethod
-	void load(String url) throws RegistryException;
 }

@@ -22,6 +22,8 @@
     <module>play-servicregistry-service</module>
     <module>play-serviceregistry-war</module>
     <module>play-serviceregistry-soapclient</module>
+    <module>play-serviceregistry-mongo</module>
+    <module>play-serviceregistry-mongo-war</module>
   </modules>
 
 	<repositories>

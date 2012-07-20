@@ -24,6 +24,7 @@ import java.util.List;
 import javax.jws.WebMethod;
 
 import org.ow2.play.service.registry.api.Registry;
+import org.ow2.play.service.registry.api.RegistryException;
 import org.petalslink.dsb.cxf.CXFHelper;
 
 /**
@@ -52,7 +53,7 @@ public class RegistryClient implements Registry {
 	 */
 	@Override
 	@WebMethod
-	public String get(String key) {
+	public String get(String key) throws RegistryException {
 		return getClient().get(key);
 	}
 
@@ -64,7 +65,7 @@ public class RegistryClient implements Registry {
 	 */
 	@Override
 	@WebMethod
-	public void put(String key, String value) {
+	public void put(String key, String value) throws RegistryException {
 		getClient().put(key, value);
 	}
 
@@ -75,7 +76,7 @@ public class RegistryClient implements Registry {
 	 */
 	@Override
 	@WebMethod
-	public List<String> keys() {
+	public List<String> keys() throws RegistryException {
 		return getClient().keys();
 	}
 
@@ -86,7 +87,7 @@ public class RegistryClient implements Registry {
 	 */
 	@Override
 	@WebMethod
-	public void clear() {
+	public void clear() throws RegistryException {
 		getClient().clear();
 	}
 
@@ -97,7 +98,7 @@ public class RegistryClient implements Registry {
 	 */
 	@Override
 	@WebMethod
-	public void load(String url) {
+	public void load(String url) throws RegistryException {
 		getClient().load(url);
 	}
 
@@ -107,5 +108,15 @@ public class RegistryClient implements Registry {
 					Registry.class);
 		}
 		return this.client;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.ow2.play.service.registry.api.Registry#init()
+	 */
+	@Override
+	public void init() throws RegistryException {
+		getClient().init();
 	}
 }

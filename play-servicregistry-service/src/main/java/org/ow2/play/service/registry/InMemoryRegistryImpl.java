@@ -31,6 +31,7 @@ import java.util.logging.Logger;
 import javax.jws.WebMethod;
 
 import org.ow2.play.service.registry.api.Registry;
+import org.ow2.play.service.registry.api.RegistryException;
 
 /**
  * @author chamerling
@@ -47,6 +48,19 @@ public class InMemoryRegistryImpl implements Registry {
 	 * 
 	 */
 	public InMemoryRegistryImpl() {
+		try {
+			this.init();
+		} catch (RegistryException e) {
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.ow2.play.service.registry.api.Registry#init()
+	 */
+	@Override
+	public void init() throws RegistryException {
 		map = new ConcurrentHashMap<String, String>();
 	}
 
