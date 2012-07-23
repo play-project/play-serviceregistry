@@ -135,7 +135,7 @@ public class RegistryImpl implements Registry {
 		String url = null;
 
 		if (logger.isLoggable(Level.FINE)) {
-			logger.fine(String.format("Get url fir name %s", name));
+			logger.fine(String.format("Get url for name %s", name));
 		}
 		checkInitialized();
 
@@ -167,10 +167,21 @@ public class RegistryImpl implements Registry {
 			throw new RegistryException(
 					"Can not put null values name = %s, url = %s", name, url);
 		}
-		DBObject o = new BasicDBObject();
-		o.put(NAME_KEY, name);
-		o.put(URL_KEY, url);
-		collection.save(o);
+
+		// update the entry if it already exists
+		DBObject filter = new BasicDBObject();
+		filter.put(NAME_KEY, name);
+
+		DBObject filtered = collection.findOne(filter);
+		if (filtered != null) {
+			filtered.put(URL_KEY, url);
+			collection.save(filtered);
+		} else {
+			DBObject o = new BasicDBObject();
+			o.put(NAME_KEY, name);
+			o.put(URL_KEY, url);
+			collection.insert(o);
+		}
 	}
 
 	/*
