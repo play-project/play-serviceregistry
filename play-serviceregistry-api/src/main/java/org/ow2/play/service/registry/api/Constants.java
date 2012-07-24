@@ -38,5 +38,7 @@ public interface Constants {
 	public static final String EC_TO_DSB_EC = "org.ow2.play.ec2dsb.eventcloud";
 
 	public static final String TOPIC = "org.ow2.play.topic";
+	
+	public static final String GOVERNANCE = "org.ow2.play.governance";
 
 }
