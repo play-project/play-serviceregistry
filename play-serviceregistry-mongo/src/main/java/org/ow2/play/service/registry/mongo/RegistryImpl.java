@@ -82,6 +82,11 @@ public class RegistryImpl implements Registry {
 	@WebMethod
 	public void init() throws RegistryException {
 		logger.info("Initializing registry service");
+		
+		if (initialized) {
+			logger.info("Already initialized");
+			return;
+		}
 
 		if (mongo != null) {
 			close();
