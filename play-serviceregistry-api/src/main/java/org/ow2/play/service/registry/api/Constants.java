@@ -40,5 +40,7 @@ public interface Constants {
 	public static final String TOPIC = "org.ow2.play.topic";
 	
 	public static final String GOVERNANCE = "org.ow2.play.governance";
+	
+	public static final String GOVERNANCE_SUBSCRIPTION_REGISTRY = "org.ow2.play.governance.subscription.registry";
 
 }
