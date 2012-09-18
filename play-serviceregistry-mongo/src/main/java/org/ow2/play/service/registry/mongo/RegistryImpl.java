@@ -40,6 +40,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import com.mongodb.ServerAddress;
+import com.mongodb.WriteResult;
 
 /**
  * Stores and read data from the serviceregistry Mongo collection.
@@ -229,9 +230,7 @@ public class RegistryImpl implements Registry {
 			logger.fine("Clear");
 		}
 		checkInitialized();
-
-		throw new RegistryException("Not implemented");
-
+		clearCollection();
 	}
 
 	/*
@@ -413,5 +412,15 @@ public class RegistryImpl implements Registry {
 
 		return portNums;
 	}
+	
+	protected void clearCollection() {
+		if (logger.isLoggable(Level.FINE)) {
+			logger.fine("Remove all objects from the collection");
+		}
+		WriteResult wr = getDbCollection().remove(new BasicDBObject());
 
+		if (logger.isLoggable(Level.FINE)) {
+			logger.fine("Write result : " + wr);
+		}
+	}
 }

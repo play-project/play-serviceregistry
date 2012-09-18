@@ -35,8 +35,24 @@ import javax.ws.rs.core.Response;
 @Path("/registry/")
 public interface Registry {
 
+	/**
+	 * Load registry from an URL 
+	 * 
+	 * @param url
+	 * @return
+	 */
 	@GET
 	@Path("load")
 	@Produces(MediaType.APPLICATION_JSON)
 	Response load(@QueryParam("url") String url);
+
+	/**
+	 * Clear the registry data
+	 * 
+	 * @return
+	 */
+	@GET
+	@Path("clear")
+	@Produces(MediaType.APPLICATION_JSON)
+	Response clear();
 }

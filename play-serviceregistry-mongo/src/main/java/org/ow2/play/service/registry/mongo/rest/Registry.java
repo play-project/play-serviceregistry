@@ -19,6 +19,11 @@
  */
 package org.ow2.play.service.registry.mongo.rest;
 
+import java.util.logging.Logger;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import org.ow2.play.service.registry.api.RegistryException;
@@ -29,12 +34,14 @@ import org.ow2.play.service.registry.api.RegistryException;
  */
 public class Registry implements
 		org.ow2.play.service.registry.api.rest.Registry {
+	
+	private static Logger logger = Logger.getLogger(Registry.class.getName());
 
 	private org.ow2.play.service.registry.api.Registry registry;
 
 	@Override
 	public Response load(String url) {
-		System.out.println("Got load for url '" + url + "'");
+		logger.info("Got load for url '" + url + "'");
 
 		if (registry == null) {
 			return Response.serverError().build();
@@ -47,6 +54,23 @@ public class Registry implements
 			return Response.serverError().build();
 		}
 		return Response.ok("Data loaded").build();
+	}
+	
+	@Override
+	public Response clear() {
+		logger.info("Got clear call");
+
+		if (registry == null) {
+			return Response.serverError().build();
+		}
+		
+		try {
+			registry.clear();
+		} catch (RegistryException e) {
+			e.printStackTrace();
+			return Response.serverError().build();
+		}
+		return Response.ok("Data deleted").build();
 	}
 
 	public void setRegistry(org.ow2.play.service.registry.api.Registry registry) {
