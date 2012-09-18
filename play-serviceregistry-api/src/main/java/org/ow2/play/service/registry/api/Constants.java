@@ -26,6 +26,10 @@ package org.ow2.play.service.registry.api;
  * 
  */
 public interface Constants {
+	
+	public static final String DSB_CONSUMER = "org.ow2.play.dsb.wsn.consumer";
+	
+	public static final String DSB_PRODUCER = "org.ow2.play.dsb.wsn.producer";
 
 	public static final String METADATA = "org.ow2.play.metadata";
 
