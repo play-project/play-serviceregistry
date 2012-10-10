@@ -25,6 +25,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 /**
+ * A simple key/value registry
+ * 
  * @author chamerling
  * 
  */
