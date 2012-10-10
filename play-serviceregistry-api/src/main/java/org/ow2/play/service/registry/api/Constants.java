@@ -30,6 +30,11 @@ public interface Constants {
 	public static final String DSB_CONSUMER = "org.ow2.play.dsb.wsn.consumer";
 	
 	public static final String DSB_PRODUCER = "org.ow2.play.dsb.wsn.producer";
+	
+	/**
+	 * The DSB TopicAware business service
+	 */
+	public static final String DSB_BUSINESS_TOPIC_MANAGEMENT = "org.ow2.play.dsb.topic.business.management";
 
 	public static final String METADATA = "org.ow2.play.metadata";
 
