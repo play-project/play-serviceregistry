@@ -27,8 +27,14 @@ package org.ow2.play.service.registry.api;
  */
 public interface Constants {
 	
+	/**
+	 * Used to notify ie send WSN notify message to this endpoint
+	 */
 	public static final String DSB_CONSUMER = "org.ow2.play.dsb.wsn.consumer";
 	
+	/**
+	 * Used to subscribe ie send WSN subscribe message to this endpoint
+	 */
 	public static final String DSB_PRODUCER = "org.ow2.play.dsb.wsn.producer";
 	
 	/**
