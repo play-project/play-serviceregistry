@@ -17,52 +17,23 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA 
  *
  */
-package org.ow2.play.service.registry.api.rest;
+package org.ow2.play.service.registry.api;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Registry REST API
+ * A registry entry
  * 
  * @author chamerling
- * 
+ *
  */
-@Path("/registry/")
-public interface Registry {
+@XmlRootElement
+public class Entry {
 
-	/**
-	 * Load registry from an URL 
-	 * 
-	 * @param url
-	 * @return
-	 */
-	@GET
-	@Path("load")
-	@Produces(MediaType.APPLICATION_JSON)
-	Response load(@QueryParam("url") String url);
-
-	/**
-	 * Clear the registry data
-	 * 
-	 * @return
-	 */
-	@GET
-	@Path("clear")
-	@Produces(MediaType.APPLICATION_JSON)
-	Response clear();
+	public String key;
 	
-	/**
-	 * Get all the values ie a key->value list
-	 * 
-	 * @return
-	 */
-	@GET
-	@Path("entries")
-	@Produces(MediaType.APPLICATION_JSON)
-	Response entries();
+	public String value;
+	
+	public Entry() {
+	}
 }

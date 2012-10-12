@@ -30,6 +30,7 @@ import java.util.logging.Logger;
 
 import javax.jws.WebMethod;
 
+import org.ow2.play.service.registry.api.Entry;
 import org.ow2.play.service.registry.api.Registry;
 import org.ow2.play.service.registry.api.RegistryException;
 
@@ -153,6 +154,22 @@ public class RegistryImpl implements Registry {
 			url = result.get(URL_KEY).toString();
 		}
 		return url;
+	}
+	
+	/* (non-Javadoc)
+	 * @see org.ow2.play.service.registry.api.Registry#entries()
+	 */
+	@Override
+	@WebMethod
+	public List<Entry> entries() throws RegistryException {
+		List<Entry> result = new ArrayList<Entry>();
+		for (String key : keys()) {
+			Entry entry = new Entry();
+			entry.key = key;
+			entry.value = get(key);
+			result.add(entry);
+		}
+		return result;
 	}
 
 	/*

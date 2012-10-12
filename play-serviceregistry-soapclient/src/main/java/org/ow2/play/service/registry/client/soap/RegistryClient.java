@@ -23,6 +23,7 @@ import java.util.List;
 
 import javax.jws.WebMethod;
 
+import org.ow2.play.service.registry.api.Entry;
 import org.ow2.play.service.registry.api.Registry;
 import org.ow2.play.service.registry.api.RegistryException;
 import org.petalslink.dsb.cxf.CXFHelper;
@@ -118,5 +119,10 @@ public class RegistryClient implements Registry {
 	@Override
 	public void init() throws RegistryException {
 		getClient().init();
+	}
+	
+	@Override
+	public List<Entry> entries() throws RegistryException {
+		return getClient().entries();
 	}
 }

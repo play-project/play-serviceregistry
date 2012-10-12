@@ -67,6 +67,15 @@ public interface Registry {
 	 */
 	@WebMethod
 	List<String> keys() throws RegistryException;
+	
+	/**
+	 * Get all the entries of the registry
+	 * 
+	 * @return
+	 * @throws RegistryException
+	 */
+	@WebMethod
+	List<Entry> entries() throws RegistryException;
 
 	/**
 	 * Clear all the entries
