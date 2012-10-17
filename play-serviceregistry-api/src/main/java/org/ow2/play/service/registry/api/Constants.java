@@ -41,6 +41,11 @@ public interface Constants {
 	 * The DSB TopicAware business service
 	 */
 	public static final String DSB_BUSINESS_TOPIC_MANAGEMENT = "org.ow2.play.dsb.topic.business.management";
+	
+	/**
+	 * Where to get DSB notification stats
+	 */
+	public static final String DSB_BUSINESS_TOPIC_STATS = "org.ow2.play.dsb.topic.business.stats";
 
 	public static final String METADATA = "org.ow2.play.metadata";
 
