@@ -70,4 +70,6 @@ public interface Constants {
 	public static final String GOVERNANCE_SUBSCRIPTION_SERVICE = "org.ow2.play.governance.subscription.service";
 
 	public static final String GOVERNANCE_TOPICREGISTRY_SERVICE = "org.ow2.play.governance.topic.registry";
+	
+	public static final String QUERY_DISPATCH_SERVICE = "org.ow2.play.querydispatcher";
 }
