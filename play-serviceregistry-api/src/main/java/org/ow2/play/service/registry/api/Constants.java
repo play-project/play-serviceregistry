@@ -71,5 +71,13 @@ public interface Constants {
 
 	public static final String GOVERNANCE_TOPICREGISTRY_SERVICE = "org.ow2.play.governance.topic.registry";
 	
+	public static final String GOVERNANCE_PATTERN_SIMPLE_SERVICE = "org.ow2.play.governance.pattern.simple";
+
+	public static final String GOVERNANCE_PATTERN_COMPLEX_SERVICE = "org.ow2.play.governance.pattern.complex";
+
+	public static final String GOVERNANCE_PATTERN_SERVICE = "org.ow2.play.governance.pattern.service";
+
+	public static final String GOVERNANCE_PATTERN_REGISTRY = "org.ow2.play.governance.pattern.registry";
+
 	public static final String QUERY_DISPATCH_SERVICE = "org.ow2.play.querydispatcher";
 }
