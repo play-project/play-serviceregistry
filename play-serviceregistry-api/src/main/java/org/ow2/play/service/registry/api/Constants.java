@@ -47,6 +47,26 @@ public interface Constants {
 	 */
 	public static final String DSB_BUSINESS_TOPIC_STATS = "org.ow2.play.dsb.topic.business.stats";
 
+	/**
+	 * Base endpoint
+	 */
+	public static final String MONITORING_DSB_BASE = "org.ow2.play.monitoring.dsb.base";
+
+	/**
+	 * Used by the DSB to send JSON data about messages
+	 */
+	public static final String MONITORING_DSB_WSN = "org.ow2.play.monitoring.dsb.wsn";
+
+	/**
+	 * 
+	 */
+	public static final String MONITORING_DSB_SERVICES = "org.ow2.play.monitoring.dsb.services";
+
+	/**
+	 * Monitoring BASE URL
+	 */
+	public static final String MONITORING_BASE = "org.ow2.play.monitoring.base";
+
 	public static final String METADATA = "org.ow2.play.metadata";
 
 	public static final String DSB_TO_EC_EC = "org.ow2.play.dsb2ec.eventcloud";
@@ -82,4 +102,5 @@ public interface Constants {
 	public static final String GOVERNANCE_EC_SERVICE = "org.ow2.play.governance.ec.service";
 
 	public static final String QUERY_DISPATCH_SERVICE = "org.ow2.play.querydispatcher";
+	
 }
