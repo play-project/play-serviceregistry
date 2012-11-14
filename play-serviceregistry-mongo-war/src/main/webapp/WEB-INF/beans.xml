@@ -30,7 +30,7 @@
 		<property name="serializeAsArray" value="true" />
 	</bean>
 
-	<bean id="registryservice" class="org.ow2.play.service.registry.mongo.RegistryImpl" />
+	<bean id="registryservice" class="org.ow2.play.service.registry.mongo.RegistryImpl" init-method="init"/>
 
 	<bean id="restregistryservice" class="org.ow2.play.service.registry.mongo.rest.Registry">
 		<property name="registry" ref="registryservice" />
