@@ -36,6 +36,12 @@ public interface Constants {
 	 * Used to subscribe ie send WSN subscribe message to this endpoint
 	 */
 	public static final String DSB_PRODUCER = "org.ow2.play.dsb.wsn.producer";
+
+	/**
+	 * Used to unsubscribe ie send unsubscribe message to the endpoint
+	 */
+	public static final String DSB_SUBSCRIPTION = "org.ow2.play.dsb.wsn.subscription";
+
 	
 	/**
 	 * The DSB TopicAware business service
