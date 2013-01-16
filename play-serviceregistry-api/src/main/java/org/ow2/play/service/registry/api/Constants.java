@@ -109,4 +109,6 @@ public interface Constants {
 
 	public static final String QUERY_DISPATCH_SERVICE = "org.ow2.play.querydispatcher";
 	
+	public static final String GOVERNANCE_BOOTSTRAP_REST = "org.ow2.play.governance.bootstrap.rest";
+	
 }
